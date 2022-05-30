@@ -1,0 +1,66 @@
+
+<div class="grid-component">
+    
+    <mat-drawer-container class="pannel">
+
+        
+        <mat-drawer #drawer mode="side" opened class="sidenav">
+            <div class="grid-container">
+                
+                <button mat-flat-button (click)="openDialogProjectCreate()"> Nouveau Projet </button>
+                <mat-form-field appearance="fill">
+                <mat-label>Vos Projets</mat-label>
+
+                <select matNativeControl required [(ngModel)]="selectedProjectId" (ngModelChange)="onChange($event)">
+                    <option [selected]="0"  [ngValue]="defaultSelectedProjectId" >Espace Personnel</option>
+                    <option *ngFor="let projet of projets$ | async" [ngValue]="projet"> {{projet.Name}} </option>
+                </select>
+
+
+                </mat-form-field>
+
+                
+                <button mat-flat-button routerLink="/functionality/user-file">Tous mes fichiers</button>
+            </div>
+        </mat-drawer>
+
+        
+
+        <mat-drawer-content class="contentPage">
+            
+
+            <button mat-icon-button>
+                <mat-icon class="icon" (click)="drawer.toggle()" [ngStyle]="{'color':'white'}">menu</mat-icon>
+            </button>
+
+            <h1 style="text-align: center" > Projet selectionné: {{ selectedProjectId.Name }} </h1>
+            <button mat-button class="parameter-button" [matMenuTriggerFor]="menuProjet" *ngIf="selectedProjectId">Paramètres Projets</button>
+            <mat-menu #menuProjet="matMenu">
+            <button mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                <span>Details Projet</span>
+            </button>
+            <button mat-menu-item (click)="openDialogAdd()">
+                <mat-icon>add</mat-icon>
+                <span>Ajouter un membre</span> <!--Ouverture d'une poppup avec formulaire + Envoie invitation-->
+            </button>
+            <button mat-menu-item (click)="openDialogRemove()">
+                <mat-icon>remove</mat-icon>
+                <span>Exclure un membre</span> <!--Requete get des membres du projet dans ouverture de poppup-->
+            </button>
+            </mat-menu>
+
+            
+
+            
+            <app-user-file [selectedProjectId] = "selectedProjectId.IdProjects" [selectedProjectName] = "selectedProjectId.Name" ></app-user-file>
+
+
+
+
+        </mat-drawer-content>
+
+        
+    </mat-drawer-container>
+</div>
+
