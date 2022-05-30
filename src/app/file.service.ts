@@ -19,11 +19,11 @@ export class ProjectInfo {
   providedIn: 'root'
 })
 export class FileService {
-  private _fileURL = "http://localhost:3000/api/files" //recupère les données depuis le serveur
+  private _fileURL = "https://pmanager-back.herokuapp.com/api/files" //recupère les données depuis le serveur
   private _fileLoad = "http://localhost:3000"
-  private _fileUpload = "http://localhost:3000/api/upload"
-  private _fileDownload = "http://localhost:3000/api/download"
-  private _getAllFilesProject = "http://localhost:3000/api/getAllFilesProject"
+  private _fileUpload = "https://pmanager-back.herokuapp.com/api/upload"
+  private _fileDownload = "https://pmanager-back.herokuapp.com/api/download"
+  private _getAllFilesProject = "https://pmanager-back.herokuapp.com/api/getAllFilesProject"
 
   httpOptions = {
     headers: new HttpHeaders({ 

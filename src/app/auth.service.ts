@@ -12,9 +12,9 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
 
-  private _registerUrl = "http://localhost:3000/api/register"
-  private _loginUrl = "http://localhost:3000/api/login"
-  private _getUserInfoUrl = "http://localhost:3000/api/getUser"
+  private _registerUrl = "https://pmanager-back.herokuapp.com/api/register"
+  private _loginUrl = "https://pmanager-back.herokuapp.com/api/login"
+  private _getUserInfoUrl = "https://pmanager-back.herokuapp.com/api/getUser"
 
 
   constructor(

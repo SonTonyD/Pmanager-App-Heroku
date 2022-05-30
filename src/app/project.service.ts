@@ -14,11 +14,11 @@ export class ProjectService {
 
   constructor(private http : HttpClient, private auth: AuthService) { }
   
-  private _getProjectByUser = "http://localhost:3000/api/getProjectbyUser";
-  private _addUserToProject = "http://localhost:3000/api/addUserToProject";
-  private _removeUserToProject = "http://localhost:3000/api/removeUserToProject";
-  private _getMembersOfProject = "http://localhost:3000/api/getMembersOfProject";
-  private _getLatestProjectByUser = "http://localhost:3000/api/getLatestProjectByUser";
+  private _getProjectByUser = "https://pmanager-back.herokuapp.com/api/getProjectbyUser";
+  private _addUserToProject = "https://pmanager-back.herokuapp.com/api/addUserToProject";
+  private _removeUserToProject = "https://pmanager-back.herokuapp.com/api/removeUserToProject";
+  private _getMembersOfProject = "https://pmanager-back.herokuapp.com/api/getMembersOfProject";
+  private _getLatestProjectByUser = "https://pmanager-back.herokuapp.com/api/getLatestProjectByUser";
 
 
   httpOptions = {

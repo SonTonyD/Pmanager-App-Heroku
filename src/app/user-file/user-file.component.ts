@@ -80,12 +80,12 @@ export class UserFileComponent implements OnChanges {
   }
 
   func(name:any){	
-    window.location.href = "http://localhost:3000/api/download/" + name;
+    window.location.href = "https://pmanager-back.herokuapp.com/api/download/" + name;
   }
 
   downloadMore(element:any){
     for (var i = 0; i < element.length; i++){
-      window.location.href = "http://localhost:3000/api/download/" + element[i].value.name;
+      window.location.href = "https://pmanager-back.herokuapp.com/api/download/" + element[i].value.name;
       this.refresh;
     }
   }
