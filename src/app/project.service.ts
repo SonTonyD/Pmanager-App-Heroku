@@ -50,7 +50,7 @@ export class ProjectService {
 
     var myProject = {"name": projet.name, "users":projet.users,"tokenOwner":''+projet.tokenOwner}
 
-    return this.http.post<NewProject>("http://localhost:3000/api/createNewProject", myProject, this.httpOptions);
+    return this.http.post<NewProject>("https://pmanager-back.herokuapp.com/api/createNewProject", myProject, this.httpOptions);
   }
 
   getLatestProjectByUser() {
