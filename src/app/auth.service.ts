@@ -47,14 +47,13 @@ export class AuthService {
   
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json', "Content-Security-Policy":"upgrade-insecure-requests"})
+    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   }
 
   httpOptionsToken = {
     headers: new HttpHeaders({ 
       'Content-Type': 'application/json',
       'Authorization':`${this.getToken()}`,
-      "Content-Security-Policy":"upgrade-insecure-requests"
     })
   }
 

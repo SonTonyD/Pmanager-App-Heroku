@@ -30,7 +30,7 @@ export class FileService {
       'Content-Type': 'multipart/form-data',
       'Authorization': `Bearer ${this.auth.getToken()}`,
       'Access-Control-Allow-Origin':'*' ,
-      "Content-Security-Policy":"upgrade-insecure-requests"
+
    })
   }
 
@@ -38,14 +38,14 @@ export class FileService {
     headers: new HttpHeaders({ 
       'Content-Type': 'application/json',
       'Authorization': `${this.auth.getToken()}`,
-      "Content-Security-Policy":"upgrade-insecure-requests"
+
    })
   }
 
   httpOptionsToken = {
     headers: new HttpHeaders({ 
       'Authorization': `${this.auth.getToken()}`,
-      "Content-Security-Policy":"upgrade-insecure-requests"
+
    })
   }
 

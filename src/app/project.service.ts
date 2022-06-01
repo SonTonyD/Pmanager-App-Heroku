@@ -25,7 +25,6 @@ export class ProjectService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json', 
       'Authorization': `${this.auth.getToken()}`,
-      "Content-Security-Policy":"upgrade-insecure-requests"
    })
   }
 
