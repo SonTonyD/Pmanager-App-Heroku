@@ -156,7 +156,7 @@ export class UserFileComponent implements OnChanges {
   curSec: number = 0;
 
   startTimer() {
-    const time = (this.uploadedFiles.size * 0.0003)/1000 ;
+    const time = (this.uploadedFiles.size * 0.00045)/1000 ;
     const timer$ = interval(1000);
 
     const sub = timer$.subscribe((sec) => {
