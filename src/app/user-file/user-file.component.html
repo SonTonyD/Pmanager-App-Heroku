@@ -1,5 +1,6 @@
 
 <div class="page">
+    <h3 *ngIf="progressbarValue < 100">Upload en cours ...</h3>
     <mat-progress-bar mode="determinate" [value]="progressbarValue"></mat-progress-bar>
     <div class="mainContainer">
       <div class="content">
