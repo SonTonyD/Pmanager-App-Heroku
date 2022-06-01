@@ -3,6 +3,7 @@
     <h3 *ngIf="progressbarValue < 100">Upload en cours ...</h3>
     <mat-progress-bar mode="determinate" [value]="progressbarValue"></mat-progress-bar>
     <p *ngIf="timeUpload && progressbarValue < 100"> Temps restant : {{ (timeUpload) }} minutes {{timeSecond}} secondes </p>
+    <p *ngIf="timeUpload<1 && progressbarValue < 100"> Temps restant : moins d'une minute </p>
     <div class="mainContainer">
       <div class="content">
           <div class="header">
