@@ -12,9 +12,9 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
 
-  private _registerUrl = "http://54.234.155.122:8000/api/register"
-  private _loginUrl = "http://54.234.155.122:8000/api/login"
-  private _getUserInfoUrl = "http://54.234.155.122:8000/api/getUser"
+  private _registerUrl = "https://pmanager-back.herokuapp.com/api/register"
+  private _loginUrl = "https://pmanager-back.herokuapp.com/api/login"
+  private _getUserInfoUrl = "https://pmanager-back.herokuapp.com/api/getUser"
 
 
   constructor(

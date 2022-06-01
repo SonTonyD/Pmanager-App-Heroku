@@ -80,12 +80,12 @@ export class UserFileComponent implements OnChanges {
   }
 
   func(name:any){	
-    window.location.href = "http://54.234.155.122:8000/api/download/" + name;
+    window.location.href = "https://pmanager-back.herokuapp.com/api/download/" + name;
   }
 
   downloadMore(element:any){
     for (var i = 0; i < element.length; i++){
-      window.location.href = "http://54.234.155.122:8000/api/download/" + element[i].value.name;
+      window.location.href = "https://pmanager-back.herokuapp.com/api/download/" + element[i].value.name;
       this.refresh;
     }
   }
@@ -128,7 +128,7 @@ export class UserFileComponent implements OnChanges {
       var idobj={
         "fileid": fileid
       };
-      this.http.post('http://54.234.155.122:8000/api/deletefiles', idobj)
+      this.http.post('https://pmanager-back.herokuapp.com/api/deletefiles', idobj)
       .subscribe((response) => {
           console.log('response received is ', response);
           location.reload();
