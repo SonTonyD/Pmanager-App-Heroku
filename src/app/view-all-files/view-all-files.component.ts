@@ -40,7 +40,7 @@ export class ViewAllFilesComponent implements OnInit {
 
 
   func(name:any){	
-    window.location.href = "http://localhost:3000/api/download/" + name;
+    window.location.href = "https://pmanager-back.herokuapp.com/api/download/" + name;
   }
 
   downloadMore(element:any){
@@ -68,7 +68,7 @@ export class ViewAllFilesComponent implements OnInit {
       var idobj={
         "fileid": fileid
       };
-      this.http.post('/api/deletefiles', idobj)
+      this.http.post('https://pmanager-back.herokuapp.com/api/deletefiles', idobj)
       .subscribe((response) => {
           console.log('response received is ', response);
           location.reload();
