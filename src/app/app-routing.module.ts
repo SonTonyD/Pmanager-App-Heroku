@@ -8,13 +8,14 @@ import { UserFileComponent } from './user-file/user-file.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './home-page/profile/profile.component';
 import { ViewAllFilesComponent } from './view-all-files/view-all-files.component';
+import { ContentMyPageComponent } from './home-page/content-mypage/content-mypage.component';
 
 const routes : Routes = [
   { path: 'functionality', component: HomeComponent},
   { path: 'signIn', component: SignInComponent},
   { path: 'functionality/user-file', component: ViewAllFilesComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'profile', component: ProfileComponent},
+  { path: 'profile', component: ContentMyPageComponent},
   { path: '', component: HomePageComponent}
 
 ]
