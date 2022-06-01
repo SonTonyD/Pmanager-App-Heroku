@@ -12,9 +12,9 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
 
-  private _registerUrl = "https://pmanager-back.herokuapp.com/api/register"
-  private _loginUrl = "https://pmanager-back.herokuapp.com/api/login"
-  private _getUserInfoUrl = "https://pmanager-back.herokuapp.com/api/getUser"
+  private _registerUrl = "http://54.234.155.122:8000/api/register"
+  private _loginUrl = "http://54.234.155.122:8000/api/login"
+  private _getUserInfoUrl = "http://54.234.155.122:8000/api/getUser"
 
 
   constructor(
@@ -47,13 +47,14 @@ export class AuthService {
   
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+    headers: new HttpHeaders({ 'Content-Type': 'application/json', "Content-Security-Policy":"upgrade-insecure-requests"})
   }
 
   httpOptionsToken = {
     headers: new HttpHeaders({ 
       'Content-Type': 'application/json',
       'Authorization':`${this.getToken()}`,
+      "Content-Security-Policy":"upgrade-insecure-requests"
     })
   }
 
