@@ -173,7 +173,7 @@ export class UserFileComponent implements OnChanges {
     const sub = timer$.subscribe((sec) => {
       this.progressbarValue = 100 - sec * 100 / time;
       this.curSec = sec;
-      this.timeUpload = Math.round((time * (this.progressbarValue/100)) /60) 
+      this.timeUpload = Math.floor((time * (this.progressbarValue/100)) /60) 
       this.timeSecond = Math.floor(( ((time * (this.progressbarValue/100)) /60) - Math.floor((time * (this.progressbarValue/100)) /60) ) *60) 
 
       if (this.curSec === time) {
