@@ -146,9 +146,17 @@ export class UserFileComponent implements OnChanges {
 
   
   refresh(): void {
-    setTimeout(function() {
-      window.location.reload();
-    }, this.uploadedFiles.size * 0.0005);
+    if (this.uploadedFiles.size * 0.0005 < 1500) {
+      setTimeout(function() {
+        window.location.reload();
+      }, 1500);
+    } else {
+      setTimeout(function() {
+        window.location.reload();
+      }, this.uploadedFiles.size * 0.0005);
+    }
+
+    
     
   }
 
@@ -159,7 +167,7 @@ export class UserFileComponent implements OnChanges {
   
 
   startTimer() {
-    const time = (this.uploadedFiles.size * 0.00045)/1000 ;
+    const time = (this.uploadedFiles.size * 0.0005)/1000 ;
     const timer$ = interval(1000);
 
     const sub = timer$.subscribe((sec) => {
