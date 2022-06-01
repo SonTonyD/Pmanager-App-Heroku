@@ -128,7 +128,7 @@ export class UserFileComponent implements OnChanges {
       var idobj={
         "fileid": fileid
       };
-      this.http.post('/api/deletefiles', idobj)
+      this.http.post('https://pmanager-back.herokuapp.com/api/deletefiles', idobj)
       .subscribe((response) => {
           console.log('response received is ', response);
           location.reload();
