@@ -154,6 +154,9 @@ export class UserFileComponent implements OnChanges {
 
   progressbarValue = 100;
   curSec: number = 0;
+  timeUpload!: number;
+  timeSecond!: number;
+  
 
   startTimer() {
     const time = (this.uploadedFiles.size * 0.00045)/1000 ;
@@ -162,6 +165,8 @@ export class UserFileComponent implements OnChanges {
     const sub = timer$.subscribe((sec) => {
       this.progressbarValue = 100 - sec * 100 / time;
       this.curSec = sec;
+      this.timeUpload = Math.round((time * (this.progressbarValue/100)) /60) 
+      this.timeSecond = Math.floor(( ((time * (this.progressbarValue/100)) /60) - Math.floor((time * (this.progressbarValue/100)) /60) ) *60) 
 
       if (this.curSec === time) {
         sub.unsubscribe();
