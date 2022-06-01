@@ -29,3 +29,7 @@ tr.basicinfo:nth-child(even) {
     background-color: #ffffff;
 }
 
+.page {
+    height: 800px;
+}
+
