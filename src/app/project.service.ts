@@ -14,11 +14,11 @@ export class ProjectService {
 
   constructor(private http : HttpClient, private auth: AuthService) { }
   
-  private _getProjectByUser = "https://pmanager-back.herokuapp.com/api/getProjectbyUser";
-  private _addUserToProject = "https://pmanager-back.herokuapp.com/api/addUserToProject";
-  private _removeUserToProject = "https://pmanager-back.herokuapp.com/api/removeUserToProject";
-  private _getMembersOfProject = "https://pmanager-back.herokuapp.com/api/getMembersOfProject";
-  private _getLatestProjectByUser = "https://pmanager-back.herokuapp.com/api/getLatestProjectByUser";
+  private _getProjectByUser = "http://54.234.155.122:8000/api/getProjectbyUser";
+  private _addUserToProject = "http://54.234.155.122:8000/api/addUserToProject";
+  private _removeUserToProject = "http://54.234.155.122:8000/api/removeUserToProject";
+  private _getMembersOfProject = "http://54.234.155.122:8000/api/getMembersOfProject";
+  private _getLatestProjectByUser = "http://54.234.155.122:8000/api/getLatestProjectByUser";
 
 
   httpOptions = {
@@ -50,7 +50,7 @@ export class ProjectService {
 
     var myProject = {"name": projet.name, "users":projet.users,"tokenOwner":''+projet.tokenOwner}
 
-    return this.http.post<NewProject>("https://pmanager-back.herokuapp.com/api/createNewProject", myProject, this.httpOptions);
+    return this.http.post<NewProject>("http://54.234.155.122:8000/api/createNewProject", myProject, this.httpOptions);
   }
 
   getLatestProjectByUser() {
