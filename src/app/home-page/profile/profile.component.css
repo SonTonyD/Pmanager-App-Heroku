@@ -13,6 +13,10 @@
     padding: 2%;
 }
 
+.grid-component {
+    height: 800px;
+}
+
 .sidenav {
     background-color: darkgray;
     padding: 20px;

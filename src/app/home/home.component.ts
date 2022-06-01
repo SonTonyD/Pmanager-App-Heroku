@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   selectedProjectId: Project = {
     "IdOwner": 0,
     "IdProjects": 0,
-    "Name":"Espace Personnel"
+    "Name":"nothing"
   }
 
   defaultSelectedProjectId: Project = {

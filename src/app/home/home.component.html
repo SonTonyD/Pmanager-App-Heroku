@@ -12,7 +12,7 @@
                 <mat-label>Vos Projets</mat-label>
 
                 <select matNativeControl required [(ngModel)]="selectedProjectId" (ngModelChange)="onChange($event)">
-                    <option [selected]="0"  [ngValue]="defaultSelectedProjectId" >Espace Personnel</option>
+                    <option [ngValue]="defaultSelectedProjectId" >Espace Personnel</option>
                     <option *ngFor="let projet of projets$ | async" [ngValue]="projet"> {{projet.Name}} </option>
                 </select>
 
@@ -33,13 +33,10 @@
                 <mat-icon class="icon" (click)="drawer.toggle()" [ngStyle]="{'color':'white'}">menu</mat-icon>
             </button>
 
-            <h1 style="text-align: center" > Projet selectionné: {{ selectedProjectId.Name }} </h1>
-            <button mat-button class="parameter-button" [matMenuTriggerFor]="menuProjet" *ngIf="selectedProjectId">Paramètres Projets</button>
+            <h1 style="text-align: center" [(ngModel)]="selectedProjectId" *ngIf="selectedProjectId.Name == 'null'"> Projet selectionné: Espace Personnel </h1>
+            <h1 style="text-align: center" [(ngModel)]="selectedProjectId" *ngIf="selectedProjectId.Name != 'null'"> Projet selectionné: {{ selectedProjectId.Name }} </h1>
+            <button mat-flat-button class="parameter-button" [matMenuTriggerFor]="menuProjet" *ngIf="selectedProjectId">Gestion des membres</button>
             <mat-menu #menuProjet="matMenu">
-            <button mat-menu-item>
-                <mat-icon>settings</mat-icon>
-                <span>Details Projet</span>
-            </button>
             <button mat-menu-item (click)="openDialogAdd()">
                 <mat-icon>add</mat-icon>
                 <span>Ajouter un membre</span> <!--Ouverture d'une poppup avec formulaire + Envoie invitation-->
