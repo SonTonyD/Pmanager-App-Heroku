@@ -4,6 +4,7 @@ import { HttpClient} from '@angular/common/http';
 import { debounceTime, map } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { SimpleChanges } from '@angular/core';
+import { interval } from 'rxjs';
 
 
 @Component({
@@ -42,6 +43,7 @@ export class UserFileComponent implements OnChanges {
   sharedFiles!: any;
   idString : string = "";
   
+  fileSize! : number;
 
   getCurrentId() : number {
     let tmp = 0;
@@ -96,6 +98,7 @@ export class UserFileComponent implements OnChanges {
 
   fileChange(element:any) {
     this.uploadedFiles = element.target.files[0];
+    console.log("fileSize: ", this.uploadedFiles.size)
     console.log(this.uploadedFiles);
   }
 
@@ -145,8 +148,25 @@ export class UserFileComponent implements OnChanges {
   refresh(): void {
     setTimeout(function() {
       window.location.reload();
-    }, 1500);
+    }, this.uploadedFiles.size * 0.0005);
     
+  }
+
+  progressbarValue = 100;
+  curSec: number = 0;
+
+  startTimer() {
+    const time = (this.uploadedFiles.size * 0.0003)/1000 ;
+    const timer$ = interval(1000);
+
+    const sub = timer$.subscribe((sec) => {
+      this.progressbarValue = 100 - sec * 100 / time;
+      this.curSec = sec;
+
+      if (this.curSec === time) {
+        sub.unsubscribe();
+      }
+    });
   }
 
 

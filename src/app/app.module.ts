@@ -32,6 +32,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ViewAllFilesComponent } from './view-all-files/view-all-files.component'; 
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 
@@ -73,7 +74,8 @@ import { ViewAllFilesComponent } from './view-all-files/view-all-files.component
     MatMenuModule,
     MatSelectModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
